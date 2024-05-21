@@ -1,5 +1,5 @@
-import { ChessBoard, ChessPiece } from "./types";
-import PiecePawn from "./components/piece/PiecePawn.vue";
+import { ChessBoard, ChessPieceKey } from "./types";
+import PiecePawn from './components/piece/PiecePawn.vue';
 import PieceRook from "./components/piece/PieceRook.vue";
 import PieceKnight from "./components/piece/PieceKnight.vue";
 import PieceBishop from "./components/piece/PieceBishop.vue";
@@ -104,7 +104,7 @@ export const getInitialBoard = (): ChessBoard => [
   ],
 ];
 
-export const pieceMap: Record<ChessPiece, any> = {
+export const pieceMap: Record<ChessPieceKey, any> = {
   "": "",
   p: PiecePawn,
   r: PieceRook,
@@ -120,6 +120,6 @@ export const pieceMap: Record<ChessPiece, any> = {
   K: PieceKing,
 };
 
-export const getPieceComponentName = (piece: ChessPiece): string => {
-  return pieceMap[piece as ChessPiece];
+export const getPieceComponentName = (piece: ChessPieceKey): string => {
+  return pieceMap[piece as ChessPieceKey];
 };

@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { defineProps, PropType, ref } from 'vue';
+import { PropType, ref } from 'vue';
 import ChessPiece from './ChessPiece.vue';
 const props = defineProps({
   piece: {
@@ -26,7 +26,7 @@ const startMoveHanlder = () => {
     chesssquare: true,
     'is-colored': props.isColoredSquare,
   }">
-    <span class="cordinate">{{ props.coordinate }}</span>
+    <span class="coordinate">{{ props.coordinate }}</span>
     <ChessPiece v-if="piece" :piece="piece" :isMoving="isMoving" :coordinate="coordinate"
       @startMove="startMoveHanlder" />
   </div>
@@ -43,7 +43,7 @@ const startMoveHanlder = () => {
   position: relative;
 }
 
-.cordinate {
+.coordinate {
   position: absolute;
   bottom: 0;
   left: 0;

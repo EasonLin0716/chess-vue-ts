@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { defineProps, PropType } from 'vue';
+import { PropType } from 'vue';
 const props = defineProps({
     piece: {
         type: String as PropType<string>,
@@ -11,7 +11,6 @@ const props = defineProps({
     },
 });
 </script>
-
 <template>
     <div>{{ props.piece }}</div>
 </template>
