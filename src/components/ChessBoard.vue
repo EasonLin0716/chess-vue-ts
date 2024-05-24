@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ChessBoard } from '../types';
+import { ChessBoard } from '../constants';
 import ChessSquare from './ChessSquare.vue';
 import { ref } from 'vue';
 import { getInitialBoard } from '../utils';

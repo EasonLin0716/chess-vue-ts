@@ -1,39 +1,31 @@
 <script setup lang="ts">
-import { PropType, ref } from 'vue';
+import {  ref } from 'vue';
 import ChessPiece from './ChessPiece.vue';
-const props = defineProps({
-  piece: {
-    type: String as PropType<string>,
-    required: true,
-  },
-  isColoredSquare: {
-    type: Boolean as PropType<boolean>,
-    required: true,
-  },
-  coordinate: {
-    type: String as PropType<string>,
-    required: true,
-  },
-});
+interface Props {
+    piece: string;
+    isColoredSquare: boolean;
+    coordinate: string;
+}
+const props = defineProps<Props>();
 const isMoving = ref(false)
-const startMoveHanlder = () => {
+const startMoveHandler = () => {
   isMoving.value = true;
 }
 </script>
 
 <template>
   <div :class="{
-    chesssquare: true,
+    'chess-square': true,
     'is-colored': props.isColoredSquare,
   }">
     <span class="coordinate">{{ props.coordinate }}</span>
     <ChessPiece v-if="piece" :piece="piece" :isMoving="isMoving" :coordinate="coordinate"
-      @startMove="startMoveHanlder" />
+      @startMove="startMoveHandler" />
   </div>
 </template>
 
 <style scoped>
-.chesssquare {
+.chess-square {
   height: 100%;
   display: flex;
   justify-content: center;

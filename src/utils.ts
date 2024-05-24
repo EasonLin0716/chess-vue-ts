@@ -1,4 +1,4 @@
-import { ChessBoard, ChessPieceKey } from "./types";
+import { ChessBoard, ChessPieceKey } from "./constants";
 import PiecePawn from './components/piece/PiecePawn.vue';
 import PieceRook from "./components/piece/PieceRook.vue";
 import PieceKnight from "./components/piece/PieceKnight.vue";

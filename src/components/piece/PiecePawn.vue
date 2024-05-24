@@ -1,15 +1,7 @@
 <script setup lang="ts">
-import { PropType } from 'vue';
-const props = defineProps({
-    piece: {
-        type: String as PropType<string>,
-        required: true,
-    },
-    isMoving: {
-        type: Boolean as PropType<boolean>,
-        required: true,
-    },
-});
+import { PieceProps, PieceEmits } from '@/constants';
+const props = defineProps<PieceProps>();
+const emit = defineEmits<PieceEmits>();
 </script>
 
 <template>

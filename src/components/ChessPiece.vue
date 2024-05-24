@@ -1,29 +1,29 @@
 <script setup lang="ts">
-import { PropType } from 'vue';
 import { pieceMap } from '../utils';
-import { ChessPieceKey } from '../types';
-const props = defineProps({
-    piece: {
-        type: String as PropType<string>,
-        required: true,
-    },
-    isMoving: {
-        type: Boolean as PropType<boolean>,
-        required: true,
-    },
-    coordinate: {
-        type: String as PropType<string>,
-        required: true,
-    },
-});
-const emits = defineEmits(['startMove']);
+import { ChessPieceKey } from '../constants';
+interface Props {
+    piece: string;
+    isMoving: boolean;
+    coordinate: string;
+
+}
+const props = defineProps<Props>();
+
+interface Emits {
+    (event: 'startMove'): void;
+}
+
+const emits = defineEmits<Emits>();
+
+const startMoveHandler = () => {
+    console.log('startMove!')
+    emits('startMove');
+};
 </script>
-
 <template>
-    <component :is="pieceMap[props.piece as ChessPieceKey]" :piece="piece" :isMoving="props.isMoving" class="chess-piece"
-        @startMove="emits('startMove')" />
+    <component :is="pieceMap[props.piece as ChessPieceKey]" :piece="piece" :isMoving="props.isMoving"
+        class="chess-piece" @startMove="startMoveHandler" />
 </template>
-
 <style scoped>
 .chess-piece {
     font-size: 2em;

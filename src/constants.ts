@@ -20,3 +20,10 @@ export type ChessSquare = {
   y: SquareY;
 };
 export type ChessBoard = ChessSquare[][];
+export interface PieceProps {
+    piece: string;
+    isMoving: boolean;
+}
+export interface PieceEmits {
+    (event: 'startMove'): void;
+}
