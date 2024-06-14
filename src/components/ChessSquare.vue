@@ -1,13 +1,15 @@
 <script setup lang="ts">
 import {  ref } from 'vue';
+import type { Ref } from 'vue';
 import ChessPiece from './ChessPiece.vue';
 interface Props {
     piece: string;
     isColoredSquare: boolean;
     coordinate: string;
 }
+
 const props = defineProps<Props>();
-const isMoving = ref(false)
+const isMoving: Ref<boolean> = ref(false)
 const startMoveHandler = () => {
   isMoving.value = true;
 }

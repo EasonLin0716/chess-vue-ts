@@ -2,8 +2,9 @@
 import { ChessBoard } from '../constants';
 import ChessSquare from './ChessSquare.vue';
 import { ref } from 'vue';
+import type { Ref } from 'vue';
 import { getInitialBoard } from '../utils';
-const board = ref<ChessBoard>(getInitialBoard());
+const board: Ref<ChessBoard> = ref(getInitialBoard());
 const isColoredSquare = (x: number, y: number) => {
     return (x % 2 === 0 && y % 2 === 1) || (x % 2 === 1 && y % 2 === 0);
 }
